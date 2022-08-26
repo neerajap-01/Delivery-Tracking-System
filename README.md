@@ -4,10 +4,10 @@
 
 ### Assignment Name: Product Order to Delivery with Tracking System.
 - Steps:
-  1) Place Order
-	a. Place Order API and generate tracking id.
+  1) Place Order \
+	a. Place Order API and generate tracking id. \
 	b. Fetch Order API with tracking id assigned.
-  2) Product Delivery.
+  2) Product Delivery.\
 	a. Maintain Product delivery status with its delivery details like (Place, time and remaining time)
 	
 ```
@@ -40,9 +40,9 @@
 	},
 ]
 ```
-  1) Create an API for updating the product delivery status by changing place with time 
-	a. This should be in list form 
-		i. 1st place and time with remaining timing,
-	   ii. 2nd place and time with remaining timing,
-	  iii. nth place and time with remaining timing, 
+  - Create an API for updating the product delivery status by changing place with time \
+	a. This should be in list form \
+		i. 1st place and time with remaining timing,\
+	       ii. 2nd place and time with remaining timing, \
+	      iii. nth place and time with remaining timing, \
 	b. Lasty update the status of product has been delivered.
