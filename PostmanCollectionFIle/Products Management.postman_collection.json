@@ -1,0 +1,793 @@
+{
+	"info": {
+		"_postman_id": "d64b7159-22b7-452a-8091-58eaf126ba9c",
+		"name": "Products Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19750191"
+	},
+	"item": [
+		{
+			"name": "Users API",
+			"item": [
+				{
+					"name": "Create User API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fname",
+									"value": "Neeraj",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "Pal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "neeraja01@gmail.in",
+									"type": "text"
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": "/E:/Websites/Protfolio Websites/images/2pc_mockup.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "9658745168",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@123",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "{\"shipping\": {\"street\": \"MG Road\",\"city\": \"Indore\",\"pincode\": 452001},\"billing\": {\"street\": \"MG Road\",\"city\": \"Indore\",\"pincode\": 452001}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"neeraja01@gmail.in\",\r\n    \"password\": \"Qwerty@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhjZWE0NjZlYWRiNDQ4ZTNhMzc1NGQiLCJpYXQiOjE2NTM2MzQ4MTEsImV4cCI6MTY1MzYzNDg0MX0.HX1DA7Ingf2k_dw6rq5o60813x1icMnNvK3sy5Dgyiw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/628cea466eadb448e3a3754d/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"628cea466eadb448e3a3754d",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhjZWE0NjZlYWRiNDQ4ZTNhMzc1NGQiLCJpYXQiOjE2NTM0OTI0OTIsImV4cCI6MTY1MzU3ODg5Mn0.2Aa2mKEMESMi-81mWUIx9cDzk1FXfmyun6tm_kvAgS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fname",
+									"value": "Johns",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lname",
+									"value": "Doe",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "johndoe@mailinator.com.in",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "profileImage",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "9876543218",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "Qwerty@12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "{\"shipping\": {\"street\": \"D\",\"pincode\":400001}}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/628cea466eadb448e3a3754d/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"628cea466eadb448e3a3754d",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product API",
+			"item": [
+				{
+					"name": "Add Product API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Sweatshird",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Dummy description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "currencyId",
+									"value": "INR",
+									"type": "text"
+								},
+								{
+									"key": "currencyFormat",
+									"value": "₹",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": "/C:/Users/neera/Downloads/code.png"
+								},
+								{
+									"key": "style",
+									"value": "Cloth",
+									"type": "text"
+								},
+								{
+									"key": "availableSizes",
+									"value": "[\"XL\", \"XS\",\"S\",\"M\",\"XXL\"]",
+									"type": "text"
+								},
+								{
+									"key": "installments",
+									"value": "5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isFreeShipping",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by Query API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:3000/products?name=nit grit&priceGreaterThan=1&priceLessThan=500",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "S",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "nit grit"
+								},
+								{
+									"key": "priceGreaterThan",
+									"value": "1"
+								},
+								{
+									"key": "priceLessThan",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by ID API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/628e0f28b26a9af274834e3f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"628e0f28b26a9af274834e3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Winter-Sweater",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Dummy description one",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "999",
+									"type": "text"
+								},
+								{
+									"key": "currencyId",
+									"value": "INR",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "currencyFormat",
+									"value": "₹",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": "/C:/Users/neera/Downloads/code.png",
+									"disabled": true
+								},
+								{
+									"key": "style",
+									"value": "Colloar",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "availableSizes",
+									"value": "[\"S\"]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "installments",
+									"value": "5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isDeleted",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isFreeShipping",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/products/628e0f28b26a9af274834e3f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"628e0f28b26a9af274834e3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product By ID API",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/628e0f28b26a9af274834e3f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"628e0f28b26a9af274834e3f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart API",
+			"item": [
+				{
+					"name": "Add Cart API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzA0ODRhMDE1NDZkN2YxYjExNTQwZTAiLCJpYXQiOjE2NjEzMjgxNTEsImV4cCI6MTY2MTQxNDU1MX0.BGYn9iLQDpRm5pZcRadZ9oT_tk92PfU8KcVN6SW_DFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"cartId\": \"6304860a1546d7f1b11540e6\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"628e4f769482b7cea6610e04\",\r\n             \"quantity\": 7\r\n        },\r\n        {\r\n            \"productId\": \"628de53218dfbde8d17d1bbe\",\r\n            \"quantity\": 5\r\n        }\r\n    ]\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/630484a01546d7f1b11540e0/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"630484a01546d7f1b11540e0",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzA0ODRhMDE1NDZkN2YxYjExNTQwZTAiLCJpYXQiOjE2NjEyNDA1MDYsImV4cCI6MTY2MTMyNjkwNn0.GE51Cmh44EnS_S6oVm6jz8HV_wgE_yRzEXtMGzM3X7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"628e4f769482b7cea6610e04\",\r\n    \"cartId\": \"6304860a1546d7f1b11540e6\",\r\n    \"removeProduct\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/630484a01546d7f1b11540e0/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"630484a01546d7f1b11540e0",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart by ID API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzA0ODRhMDE1NDZkN2YxYjExNTQwZTAiLCJpYXQiOjE2NjEzMjgxNTEsImV4cCI6MTY2MTQxNDU1MX0.BGYn9iLQDpRm5pZcRadZ9oT_tk92PfU8KcVN6SW_DFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/630484a01546d7f1b11540e0/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"630484a01546d7f1b11540e0",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart by ID API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjkwODg3OTUzZGQxNGQyMTM0YzU3MzEiLCJpYXQiOjE2NTM5MTM0NjcsImV4cCI6MTY1Mzk5OTg2N30.qJX2vYgCNG0S-5am6xBBxr2jOwtQg6-oiq_BNAS9RTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/6290887953dd14d2134c5731/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"6290887953dd14d2134c5731",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order API",
+			"item": [
+				{
+					"name": "Create Order API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzA0ODRhMDE1NDZkN2YxYjExNTQwZTAiLCJpYXQiOjE2NjEzMjgxNTEsImV4cCI6MTY2MTQxNDU1MX0.BGYn9iLQDpRm5pZcRadZ9oT_tk92PfU8KcVN6SW_DFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\": \"6304860a1546d7f1b11540e6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/630484a01546d7f1b11540e0/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"630484a01546d7f1b11540e0",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjlhZDUwODZhN2I1NjJjYjM5ZWMyNDMiLCJpYXQiOjE2NTQzMTY5MzgsImV4cCI6MTY1NDQwMzMzOH0.LeCh946Kr4CryHBxYciltZSk_1gDw_j0JFv-4sy40tI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"629af20e8bcac194a9e7ae58\",\r\n    \"status\": \"Cancelled\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/629ad5086a7b562cb39ec243/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"629ad5086a7b562cb39ec243",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzA0ODRhMDE1NDZkN2YxYjExNTQwZTAiLCJpYXQiOjE2NjEzMjgxNTEsImV4cCI6MTY2MTQxNDU1MX0.BGYn9iLQDpRm5pZcRadZ9oT_tk92PfU8KcVN6SW_DFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/630484a01546d7f1b11540e0/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"630484a01546d7f1b11540e0",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Track Order API",
+			"item": [
+				{
+					"name": "Create Delivery Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trackId\": \"63065aa15ea4ddf31e5e7643\",\r\n    \"deliveryStatus\": [\r\n        {\r\n            \"status\": \"Dispatched\",\r\n            \"place\": \"Gujarati, Mumbai\",\r\n            \"toBeDeliveredTime\": \"within 6 days\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/order/63065aa15ea4ddf31e5e7642",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"63065aa15ea4ddf31e5e7642"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Delivery Status API",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trackId\": \"63065aa15ea4ddf31e5e7643\",\r\n    \"deliveryStatus\": [\r\n        {\r\n            \"status\": \"Delivered\",\r\n            \"place\": \"Ghatkopar, Mumbai\",\r\n            \"toBeDeliveredTime\": \"within 0 days\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/order/63065aa15ea4ddf31e5e7642",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"63065aa15ea4ddf31e5e7642"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Delivery status API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/order/6306620aaccdad2df0fdcf68",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"order",
+								"6306620aaccdad2df0fdcf68"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
